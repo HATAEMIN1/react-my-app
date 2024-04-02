@@ -1,21 +1,23 @@
-.title{
-  text-align: center;
+.text{
+  background-color: skyblue;
 }
-.btn{
-  font-size: 2em;
+*{margin: 0;padding: 0;box-sizing: border-box;}
+ul,li{list-style: none; padding: 0;}
+.tabmenu{
+display: flex;
+gap:10px;
 }
-.black-nav{
-  display: flex;
-  background-color: black;
-  width: 100%;
-  color: white;
-  padding-left: 20px;
+.tabmenu li{
+  
+  padding: 5px 10px;
+  background: #eee;
+  cursor: pointer;
 }
-div{
-  box-sizing: border-box;
+.tabmenu li.active{
+  background: skyblue;
 }
-.list{
-  padding-left: 20px;
-  text-align: left;
-  border-bottom: 1px solid grey;
+.modals {
+  background-color:yellow;
+  width: 300px;height: 300px;
+  
 }
