@@ -1,34 +1,27 @@
 import React, { useState } from "react";
-import "./assets/css/style.css";
+import "./assets/css/style.scss";
+import Header from "./layout/Header";
+import Footer from "./layout/Footer";
+import { Routes, Route } from "react-router-dom";
+import Main from "./layout/Main";
+import Company from "./components/Company";
+import Community from "./components/Community";
+import Product from "./components/Product";
+import { vData } from "./data";
+
 function App() {
-  const [tab, setTab] = useState(0);
-  const [data, setData] = useState([
-    "1.Lorem ipsum dolor sit amet.",
-    "2.Lorem ipsum dolor sit amet.",
-    "3.Lorem ipsum dolor sit amet.",
-  ]);
   return (
-    <div>
-      <div>
-        <ul className="menu">
-          {data.map((item, idx) => {
-            return (
-              <div>
-                <li
-                  className={idx == tab ? "active" : ""}
-                  onClick={() => {
-                    setTab(idx);
-                  }}
-                >
-                  tab{idx + 1}
-                </li>
-              </div>
-            );
-          })}
-        </ul>
-        <div>{data[tab]}</div>
-      </div>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/Home" element={<Main vData={vData} />} />
+        <Route path="/Company" element={<Company />} />
+        <Route path="/Product/:item" element={<Product vData={vData} />} />
+        <Route path="/Community" element={<Community />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
+
 export default App;
