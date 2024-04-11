@@ -5,7 +5,7 @@ function Product(props) {
   let myData = props.vData.find((x) => {
     return x.id == item;
   });
-  console.log(myData);
+  console.log(item);
   console.log(props);
   return (
     <>
